@@ -76,8 +76,8 @@ const NTHUMods = () => {
           <div className="tech-tags">
             <span className="tech-tag">React</span>
             <span className="tech-tag">Node.js</span>
-            <span className="tech-tag">PostgreSQL</span>
-            <span className="tech-tag">Redis</span>
+            <span className="tech-tag">Supabase</span>
+            {/* <span className="tech-tag">Redis</span> */}
           </div>
         </div>
 
