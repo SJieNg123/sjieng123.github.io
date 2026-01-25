@@ -2,24 +2,22 @@ import React from 'react';
 
 const TechMarquee = () => {
   const technologies = [
-    { name: 'Rust', category: 'Language' },
-    { name: 'C++', category: 'Language' },
+    { name: 'C/C++', category: 'Language' },
     { name: 'Python', category: 'Language' },
+    { name: 'JS/TS', category: 'Language' },
     { name: 'React', category: 'Frontend' },
     { name: 'Node.js', category: 'Backend' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Redis', category: 'Cache' },
+    { name: 'Firebase', category: 'Cloud' },
     { name: 'Docker', category: 'DevOps' },
-    { name: 'Kubernetes', category: 'Orchestration' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'Git', category: 'VCS' },
+    { name: 'Git', category: 'DevOps' },
+    { name: 'QEMU & VMware', category: 'Virtualization' },
     { name: 'Linux', category: 'OS' }
   ];
 
   return (
     <section className="tech-section">
       <div className="tech-header">
-        <h2 className="section-title">Technical Arsenal</h2>
+        <h2 className="section-title">Tech Stack</h2>
       </div>
       
       <div className="marquee-container">

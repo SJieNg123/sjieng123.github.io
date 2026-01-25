@@ -8,8 +8,8 @@ const Contact = () => {
         <div className="contact-header">
           <h2 className="section-title">Let's Connect</h2>
           <p className="contact-subtitle">
-            Open to collaboration on cryptography research, system architecture,
-            and privacy-preserving technologies.
+            I am open to any opportunities, collaborations, 
+            or just a friendly chat. Badminton invitations are always welcome!
           </p>
         </div>
 
