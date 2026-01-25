@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cmd /c \"npm start\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

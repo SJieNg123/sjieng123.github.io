@@ -1,0 +1,5 @@
+/* App Container - No global centering */
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
