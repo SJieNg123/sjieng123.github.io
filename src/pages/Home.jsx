@@ -5,23 +5,15 @@ import ResearchConstellation from '../components/ResearchConstellation';
 import TechMarquee from '../components/TechMarquee';
 import Contact from '../components/Contact';
 import Kirby from '../components/Kirby';
+import Particles from '../components/Particles';
 import '../styles/portfolio.css';
+
+const PARTICLE_COLORS = ['#ffffff'];
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    // Generate random stars
-    const generatedStars = Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      delay: Math.random() * 3
-    }));
-    setStars(generatedStars);
-
     // Track mouse position
     const handleMouseMove = (e) => {
       setMousePosition({
@@ -39,19 +31,19 @@ const Home = () => {
       {/* Animated Background */}
       <div className="ambient-background">
         <div className="cosmic-gradient"></div>
-        {stars.map(star => (
-          <div
-            key={star.id}
-            className="star"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              animationDelay: `${star.delay}s`
-            }}
+        <div className="particles-layer">
+          <Particles
+            particleColors={PARTICLE_COLORS}
+            particleCount={1000}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover
+            alphaParticles
+            disableRotation={false}
+            pixelRatio={1}
           />
-        ))}
+        </div>
       </div>
 
       {/* Content */}
