@@ -16,6 +16,7 @@ My personal portfolio website built with React and modern web technologies.
 - **Lucide React** - Icon library
 
 ### Additional Libraries
+- **GSAP + ScrollTrigger** - Section entrance animations with reduced-motion support
 - **React Hook Form** - Form handling
 - **Zod** - Schema validation
 - **Axios** - HTTP client

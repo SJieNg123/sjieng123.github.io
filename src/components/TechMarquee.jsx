@@ -1,39 +1,23 @@
-import React from 'react';
+import React from 'react'
 
-const TechMarquee = () => {
-  const technologies = [
-    { name: 'C/C++', category: 'Language' },
-    { name: 'Python', category: 'Language' },
-    { name: 'JS/TS', category: 'Language' },
-    { name: 'React', category: 'Frontend' },
-    { name: 'Node.js', category: 'Backend' },
-    { name: 'Firebase', category: 'Cloud' },
-    { name: 'Docker', category: 'DevOps' },
-    { name: 'Git', category: 'DevOps' },
-    { name: 'QEMU & VMware', category: 'Virtualization' },
-    { name: 'Linux', category: 'OS' }
-  ];
+const groups = [
+  { title: 'Languages', number: '01', tools: ['C / C++', 'Python', 'JavaScript', 'TypeScript'] },
+  { title: 'Web & cloud', number: '02', tools: ['React', 'Node.js', 'Vercel', 'AWS'] },
+  { title: 'Systems & tools', number: '03', tools: ['Docker', 'Git', 'Linux', 'VirtualBox', 'VMware'] }
+]
 
-  return (
-    <section className="tech-section">
-      <div className="tech-header">
-        <h2 className="section-title">Tech Stack</h2>
-      </div>
-      
-      <div className="marquee-container">
-        <div className="marquee-content">
-          {[...technologies, ...technologies].map((tech, index) => (
-            <div key={index} className="tech-item">
-              <div className="tech-card">
-                <span className="tech-name">{tech.name}</span>
-                <span className="tech-category monospace-text">{tech.category}</span>
-              </div>
-            </div>
-          ))}
+const TechMarquee = () => (
+  <section className="toolkit-section section-shell" id="toolkit" aria-labelledby="toolkit-title">
+    <div className="section-heading"><p className="eyebrow"><span className="section-number yellow">03</span> The toolkit</p><h2 id="toolkit-title">The right tools.<br />For the right problems.</h2></div>
+    <div className="toolkit-grid">
+      {groups.map(group => (
+        <div className="toolkit-group" key={group.number}>
+          <div className="toolkit-label"><span>{group.number}</span><span className={'toolkit-shape shape-' + group.number} aria-hidden="true" /></div>
+          <h3>{group.title}</h3><ul>{group.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
         </div>
-      </div>
-    </section>
-  );
-};
+      ))}
+    </div>
+  </section>
+)
 
-export default TechMarquee;
+export default TechMarquee

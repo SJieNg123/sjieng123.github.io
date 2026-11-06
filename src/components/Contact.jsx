@@ -1,62 +1,27 @@
-import React from 'react';
-import { Mail, Github, Linkedin, FileText } from 'lucide-react';
+import React from 'react'
+import { ArrowUpRight } from 'lucide-react'
 
-const Contact = () => {
-  return (
-    <section className="contact-section">
-      <div className="contact-content">
-        <div className="contact-header">
-          <h2 className="section-title">Let's Connect</h2>
-          <p className="contact-subtitle">
-            I am open to any opportunities, collaborations, 
-            or just a friendly chat. Badminton invitations are always welcome!
-          </p>
-        </div>
-
-        <div className="contact-links">
-          <a href="mailto:shijie.jh@gmail.com" className="contact-link">
-            <div className="link-icon-wrapper">
-              <Mail className="link-icon" />
-            </div>
-            <div className="link-content">
-              <span className="link-label monospace-text">Email</span>
-              <span className="link-value">shijie.jh@gmail.com</span>
-            </div>
-          </a>
-
-          <a href="https://github.com/SJieNg123" target="_blank" rel="noopener noreferrer" className="contact-link">
-            <div className="link-icon-wrapper">
-              <Github className="link-icon" />
-            </div>
-            <div className="link-content">
-              <span className="link-label monospace-text">GitHub</span>
-              <span className="link-value">@SJieNg123</span>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/shijieng0123/" target="_blank" rel="noopener noreferrer" className="contact-link">
-            <div className="link-icon-wrapper">
-              <Linkedin className="link-icon" />
-            </div>
-            <div className="link-content">
-              <span className="link-label monospace-text">LinkedIn</span>
-              <span className="link-value">/in/shijieng0123</span>
-            </div>
-          </a>
-
-          <a href="https://hackmd.io/@sjng" target="_blank" rel="noopener noreferrer" className="contact-link">
-            <div className="link-icon-wrapper">
-              <FileText className="link-icon" />
-            </div>
-            <div className="link-content">
-              <span className="link-label monospace-text">HackMD</span>
-              <span className="link-value">@sjng</span>
-            </div>
-          </a>
-        </div>
+const Contact = () => (
+  <section className="contact-section" id="contact" aria-labelledby="contact-title">
+    <div className="contact-copy">
+      <p className="eyebrow">04 / Start a conversation</p>
+      <h2 id="contact-title">Good things<br />start with <span>hello.</span></h2>
+      <p>Projects, research, or a game of badminton.<br />I’m always open to a good conversation.</p>
+      <a className="contact-email" href="mailto:shijie.jh@gmail.com">shijie.jh@gmail.com <ArrowUpRight aria-hidden="true" /></a>
+    </div>
+    <div className="contact-aside">
+      <div className="contact-art" aria-hidden="true"><span /><ArrowUpRight strokeWidth={1.3} /></div>
+      <div className="social-links">
+        {[
+          ['GitHub', 'https://github.com/SJieNg123'],
+          ['LinkedIn', 'https://www.linkedin.com/in/shijieng0123/'],
+          ['HackMD', 'https://hackmd.io/@sjng']
+        ].map(([label, href]) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer">{label}<ArrowUpRight size={18} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+)
 
-export default Contact;
+export default Contact

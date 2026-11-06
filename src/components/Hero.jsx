@@ -1,54 +1,38 @@
-import React from 'react';
-import { ChevronDown } from 'lucide-react';
+import React from 'react'
+import { ArrowDown, ArrowUpRight } from 'lucide-react'
 
-const Hero = () => {
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  };
-
-  return (
-    <section className="hero-section">
-      <div className="hero-content">
-        {/* Top Left Tag */}
-        <div className="hero-tag">
-          <span className="monospace-text">&gt; Final Year CS student in NTHU</span>
-        </div>
-
-        {/* Center-Right Main Headline */}
-        <div className="hero-headline-container">
-          <h1 className="hero-name">Shi Jie Ng<span className="golden-star">★</span></h1>
-          <h2 className="hero-subtitle">Building. Researching. Exploring.</h2>
-          <p className="hero-description">
-            I am a final year Computer Science student at NTHU,
-            balancing my time between building scalable systems and researching privacy-preserving protocols,
-            sometimes you can find me at badminton court or stock markets.
-          </p>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="scroll-indicator" onClick={scrollToNext}>
-          <div className="golden-orb"></div>
-          <ChevronDown className="scroll-arrow" />
-          <span className="scroll-text monospace-text">Explore</span>
-        </div>
+const Hero = () => (
+  <section className="hero-section" aria-labelledby="hero-title">
+    <div className="hero-copy">
+      <p className="eyebrow"><span className="status-square" aria-hidden="true" /> Information security / NTHU</p>
+      <h1 id="hero-title">Shi Jie<br />Ng<span className="hero-period">.</span></h1>
+      <p className="hero-statement">Building systems.<br />Researching privacy.<br /><span>Exploring what’s next.</span></p>
+      <p className="hero-description">
+        I’m a master’s student at NTHU’s Institute of Information Security, advised by Te-Chuan Chiu at{' '}
+        <a className="inline-link" href="https://theochiu.wixsite.com/nthucs/acelab" target="_blank" rel="noopener noreferrer">ACE Lab <ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>.
+        {' '}With a bachelor’s degree in Computer Science, I research privacy-preserving machine learning and database performance optimization.
+      </p>
+      <div className="hero-actions">
+        <a className="button button-dark" href="#work">Explore my work <ArrowDown size={18} aria-hidden="true" /></a>
+        <a className="text-link" href="#contact">Get in touch <ArrowUpRight size={18} aria-hidden="true" /></a>
       </div>
+    </div>
+    <div className="hero-art">
+      <div className="art-caption"><span>FORM / FUNCTION</span><span>01 — 03</span></div>
+      <svg className="geometry-composition" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+        <path d="M260 0v520M0 260h520" className="art-grid" />
+        <circle className="geometry-shape" cx="130" cy="130" r="116" fill="var(--red)" />
+        <path className="geometry-shape" d="M278 242L390 18l112 224Z" fill="var(--yellow)" />
+        <path className="geometry-shape" d="M18 278h224v224H18Z" fill="var(--blue)" />
+        <g className="geometry-shape">
+          <path d="M278 278a224 224 0 0 1 224 224H278Z" fill="var(--ink)" />
+          <circle cx="390" cy="390" r="50" fill="var(--paper)" />
+        </g>
+      </svg>
+      <div className="art-legend" aria-hidden="true"><span><i className="legend-shape circle" /> Build</span><span><i className="legend-shape square" /> Research</span><span><i className="legend-shape triangle" /> Explore</span></div>
+    </div>
+    <div className="hero-footnote"><span>Engineering with intention.</span><span>Scroll to explore <ArrowDown size={14} aria-hidden="true" /></span></div>
+  </section>
+)
 
-      {/* Floating Data Points */}
-      <div className="floating-data-points">
-        <div className="data-point" style={{ top: '20%', right: '15%' }}>
-          <span className="data-label">Focus</span>
-          <span className="data-value">Scalable Systems</span>
-        </div>
-        <div className="data-point" style={{ bottom: '30%', left: '10%' }}>
-          <span className="data-label">Research</span>
-          <span className="data-value">Privacy Tech</span>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Hero;
+export default Hero

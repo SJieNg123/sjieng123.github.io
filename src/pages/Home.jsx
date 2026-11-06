@@ -1,68 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import Hero from '../components/Hero';
-import NTHUMods from '../components/NTHUMods';
-import ResearchConstellation from '../components/ResearchConstellation';
-import TechMarquee from '../components/TechMarquee';
-import Contact from '../components/Contact';
-import Kirby from '../components/Kirby';
-import Particles from '../components/Particles';
-import '../styles/portfolio.css';
-
-const PARTICLE_COLORS = ['#ffffff'];
+import React, { useRef } from 'react'
+import { ArrowUpRight, ArrowUp } from 'lucide-react'
+import Hero from '../components/Hero'
+import NTHUMods from '../components/NTHUMods'
+import ResearchConstellation from '../components/ResearchConstellation'
+import TechMarquee from '../components/TechMarquee'
+import Contact from '../components/Contact'
+import { usePortfolioMotion } from '../hooks/use-portfolio-motion'
+import '../styles/portfolio.css'
 
 const Home = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    // Track mouse position
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const rootRef = useRef(null)
+  usePortfolioMotion(rootRef)
 
   return (
-    <div className="portfolio-container">
-      {/* Animated Background */}
-      <div className="ambient-background">
-        <div className="cosmic-gradient"></div>
-        <div className="particles-layer">
-          <Particles
-            particleColors={PARTICLE_COLORS}
-            particleCount={1000}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover
-            alphaParticles
-            disableRotation={false}
-            pixelRatio={1}
-          />
-        </div>
-      </div>
-
-      {/* Content */}
-      <main className="portfolio-content">
-        <Hero />
-        <NTHUMods />
-        <ResearchConstellation mousePosition={mousePosition} />
-        <TechMarquee />
-        <Contact />
-        
-        <footer className="portfolio-footer">
-          <p className="footer-text">© 2025 Shi Jie Ng. Securing the Future.</p>
-        </footer>
-      </main>
-
-      {/* Kirby Animation */}
-      <Kirby />
+    <div className="portfolio" id="top" ref={rootRef}>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header">
+        <div className="wordmark"><span className="brand-symbol" aria-hidden="true" /><span>SHI JIE NG<span className="wordmark-dot">.</span></span></div>
+        <nav className="site-nav" aria-label="Main navigation">
+          <a href="#work">Work</a><a href="#research">Research</a><a href="#toolkit">Toolkit</a>
+          <a className="nav-contact" href="#contact">Let’s talk <ArrowUpRight size={16} aria-hidden="true" /></a>
+        </nav>
+      </header>
+      <main id="main" tabIndex={-1}><Hero /><NTHUMods /><ResearchConstellation /><TechMarquee /><Contact /></main>
+      <footer className="site-footer">
+        <span className="footer-name">Shi Jie Ng.</span>
+        <p>Built with purpose. Always exploring.</p>
+        <div className="footer-end"><span>© {new Date().getFullYear()} Shi Jie Ng</span><a href="#top" className="back-top">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div>
+      </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
