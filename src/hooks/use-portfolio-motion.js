@@ -92,7 +92,11 @@ export function usePortfolioMotion(rootRef) {
       })
       reveal('.project-copy', ':scope > *')
 
-      // 3. Research remains readable as each row enters the screen.
+      // 3. Collaboration and contributions enter independently on small screens.
+      reveal('.experience-company', ':scope > *')
+      reveal('.experience-project', '.experience-index, .experience-project-content > *')
+
+      // 4. Research remains readable as each row enters the screen.
       reveal('.research-intro', '.eyebrow, h2, p:not(.eyebrow)')
       reveal('.research-list > li', ':scope > *')
       select('.research-mark').forEach(element => {
@@ -106,7 +110,7 @@ export function usePortfolioMotion(rootRef) {
         })
       })
 
-      // 4. Toolkit groups build in reading order on desktop and mobile.
+      // 5. Toolkit groups build in reading order on desktop and mobile.
       select('.toolkit-group').forEach((element, index) => {
         entrance(element, (timeline, children) => {
           timeline.from(children('.toolkit-shape'), {
@@ -119,7 +123,7 @@ export function usePortfolioMotion(rootRef) {
         })
       })
 
-      // 5. Contact finishes the sequence with a small directional gesture.
+      // 6. Contact finishes the sequence with a small directional gesture.
       reveal('.contact-copy', ':scope > *')
       select('.contact-art').forEach(element => {
         entrance(element, (timeline, children) => {

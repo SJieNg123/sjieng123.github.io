@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { ArrowUpRight, ArrowUp } from 'lucide-react'
 import Hero from '../components/Hero'
 import NTHUMods from '../components/NTHUMods'
+import WorkExperience from '../components/WorkExperience'
 import ResearchConstellation from '../components/ResearchConstellation'
 import TechMarquee from '../components/TechMarquee'
 import Contact from '../components/Contact'
@@ -18,11 +19,11 @@ const Home = () => {
       <header className="site-header">
         <div className="wordmark"><span className="brand-symbol" aria-hidden="true" /><span>SHI JIE NG<span className="wordmark-dot">.</span></span></div>
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="#work">Work</a><a href="#research">Research</a><a href="#toolkit">Toolkit</a>
-          <a className="nav-contact" href="#contact">Let’s talk <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a href="#work">Projects</a><a href="#experience">Work Experience</a><a href="#research">Research</a><a href="#toolkit">Toolkit</a>
+          <a className="nav-contact" href="#contact">Let's talk <ArrowUpRight size={16} aria-hidden="true" /></a>
         </nav>
       </header>
-      <main id="main" tabIndex={-1}><Hero /><NTHUMods /><ResearchConstellation /><TechMarquee /><Contact /></main>
+      <main id="main" tabIndex={-1}><Hero /><NTHUMods /><WorkExperience /><ResearchConstellation /><TechMarquee /><Contact /></main>
       <footer className="site-footer">
         <span className="footer-name">Shi Jie Ng.</span>
         <p>Built with purpose. Always exploring.</p>

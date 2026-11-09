@@ -4,10 +4,10 @@ import { ArrowUpRight } from 'lucide-react'
 const Contact = () => (
   <section className="contact-section" id="contact" aria-labelledby="contact-title">
     <div className="contact-copy">
-      <p className="eyebrow">04 / Start a conversation</p>
+      <p className="eyebrow">05 / Start a conversation</p>
       <h2 id="contact-title">Good things<br />start with <span>hello.</span></h2>
       <p>Projects, research, or a game of badminton.<br />I’m always open to a good conversation.</p>
-      <a className="contact-email" href="mailto:shijie.jh@gmail.com">shijie.jh@gmail.com <ArrowUpRight aria-hidden="true" /></a>
+      <a className="contact-email" href="mailto:shijie.jh@gmail.com">Have a chat <ArrowUpRight aria-hidden="true" /></a>
     </div>
     <div className="contact-aside">
       <div className="contact-art" aria-hidden="true"><span /><ArrowUpRight strokeWidth={1.3} /></div>

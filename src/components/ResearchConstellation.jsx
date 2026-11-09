@@ -8,7 +8,7 @@ const research = [
 const ResearchConstellation = () => (
   <section className="research-section section-shell" id="research" aria-labelledby="research-title">
     <div className="research-intro">
-      <p className="eyebrow"><span className="section-number blue">02</span> Current research</p>
+      <p className="eyebrow"><span className="section-number blue">03</span> Current research</p>
       <h2 id="research-title">Private.<br />Efficient.</h2>
       <p>Privacy-preserving learning and faster database queries.</p>
       <div className="research-mark" aria-hidden="true"><span /><span /></div>
