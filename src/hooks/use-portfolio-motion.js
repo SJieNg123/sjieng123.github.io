@@ -69,7 +69,7 @@ export function usePortfolioMotion(rootRef) {
         })
       })
       select('.hero-art').forEach(element => {
-        // Every second, each shape moves one quadrant clockwise and turns 90°.
+        // Every few seconds, each shape moves one quadrant clockwise and turns 90°.
         // Quadrant centres in SVG units, clockwise from top left.
         const centres = [[130, 130], [390, 130], [390, 390], [130, 390]]
         const slots = Array.from(element.querySelectorAll('.geometry-slot'))
@@ -77,6 +77,7 @@ export function usePortfolioMotion(rootRef) {
         const offset = (index, step, axis) =>
           centres[(startSlot[index] + step) % 4][axis] - centres[startSlot[index]][axis]
 
+        const interval = 3
         const swap = gsap.timeline({ paused: true, repeat: -1 })
         for (let step = 1; step <= 4; step++) {
           swap.to(slots, {
@@ -86,10 +87,10 @@ export function usePortfolioMotion(rootRef) {
             transformOrigin: '50% 50%',
             duration: 0.7,
             ease: 'power3.inOut'
-          }, step - 0.7)
+          }, step * interval - 0.7)
         }
         // A full turn ends where it started, so the repeat is seamless.
-        swap.set(slots, { rotation: 0 }, 4)
+        swap.set(slots, { rotation: 0 }, 4 * interval)
 
         // Start after the entrance, and only run while the art is on screen.
         let started = false
