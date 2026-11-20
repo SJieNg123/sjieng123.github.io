@@ -5,7 +5,7 @@ const projects = [
     number: '01',
     title: 'NetZeroPro',
     description: 'A SaaS platform supporting low-carbon transformation.',
-    contributions: ['Automated web crawlers', 'RAG-powered recommendations', 'Bill OCR service']
+    contributions: ['Automated web crawlers', 'RAG-powered emission factor recommendations with hybrid vector and BM25 search', 'Bill OCR service']
   },
   {
     number: '02',
