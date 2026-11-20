@@ -59,6 +59,9 @@ body { background: var(--paper); color: var(--ink); }
 .eyebrow { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; display: flex; align-items: center; gap: 12px; line-height: 1.5; }
 .status-square { width: 8px; height: 8px; background: var(--red); flex-shrink: 0; }
 .hero-copy h1 { font-size: calc(clamp(88px, 10vw, 152px) - 45px); line-height: .88; letter-spacing: -.075em; font-weight: 800; margin: 31px 0 30px; }
+.hero-name { position: relative; }
+.hero-slices { position: absolute; inset: 0; visibility: hidden; pointer-events: none; }
+.hero-slice { position: absolute; inset: 0; will-change: transform; }
 .hero-period { color: var(--red); }
 .hero-statement { font-size: clamp(20px, 2.15vw, 30px); line-height: 1.28; font-weight: 700; letter-spacing: -.8px; }
 .hero-statement > span { color: var(--muted-ink); }

@@ -1,11 +1,31 @@
 import React from 'react'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 
+const SLICE_COUNT = 6
+
+const heroName = <>Shi Jie<br />Ng<span className="hero-period">.</span></>
+
+// Each slice is a full copy of the name clipped to one horizontal band.
+// The outer bands extend past the box so ascenders and descenders stay visible.
+const sliceClip = index => {
+  const band = 100 / SLICE_COUNT
+  const top = index === 0 ? '-30%' : `${index * band}%`
+  const bottom = index === SLICE_COUNT - 1 ? '-30%' : `${100 - (index + 1) * band}%`
+  return `inset(${top} -10% ${bottom} -10%)`
+}
+
 const Hero = () => (
   <section className="hero-section" aria-labelledby="hero-title">
     <div className="hero-copy">
       <p className="eyebrow"><span className="status-square" aria-hidden="true" /> Information security / NTHU</p>
-      <h1 id="hero-title">Shi Jie<br />Ng<span className="hero-period">.</span></h1>
+      <h1 id="hero-title" className="hero-name">
+        <span className="hero-name-base">{heroName}</span>
+        <span className="hero-slices" aria-hidden="true">
+          {Array.from({ length: SLICE_COUNT }, (_, index) => (
+            <span className="hero-slice" key={index} style={{ clipPath: sliceClip(index) }}>{heroName}</span>
+          ))}
+        </span>
+      </h1>
       <p className="hero-statement">Building systems.<br />Researching privacy.<br /><span>Exploring what’s next.</span></p>
       <p className="hero-description">
         I’m a master’s student at NTHU’s Institute of Information Security, advised by Te-Chuan Chiu at{' '}

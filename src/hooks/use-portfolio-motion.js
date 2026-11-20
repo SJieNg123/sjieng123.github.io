@@ -46,7 +46,28 @@ export function usePortfolioMotion(rootRef) {
       }
 
       // 1. Introduction, followed by the four geometric building blocks.
-      reveal('.hero-copy', ':scope > *')
+      reveal('.hero-copy', ':scope > :not(.hero-name)')
+
+      // The name assembles from horizontal slices that slide in from alternating sides.
+      select('.hero-name').forEach(element => {
+        const base = element.querySelector('.hero-name-base')
+        const slices = element.querySelectorAll('.hero-slice')
+        const offset = desktop ? 120 : 60
+
+        entrance(element, timeline => {
+          timeline.set(base, { autoAlpha: 0 })
+            .set(element.querySelector('.hero-slices'), { autoAlpha: 1 })
+            .from(slices, {
+              x: index => (index % 2 === 0 ? -1 : 1) * offset * (1 - index * 0.08),
+              opacity: 0,
+              duration: desktop ? 0.9 : 0.7,
+              ease: 'power4.out',
+              stagger: 0.06
+            })
+            .set(base, { autoAlpha: 1 })
+            .set(element.querySelector('.hero-slices'), { autoAlpha: 0 })
+        })
+      })
       select('.hero-art').forEach(element => {
         entrance(element, (timeline, children) => {
           const grid = children('.art-grid')[0]
@@ -194,6 +215,35 @@ export function usePortfolioMotion(rootRef) {
       })
 
       return () => cleanups.forEach(cleanup => cleanup())
+    }, root)
+
+    // Hovering the name briefly knocks its slices out of line, then settles them.
+    media.add('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {
+      const name = root.querySelector('.hero-name')
+      if (!name) return undefined
+      const base = name.querySelector('.hero-name-base')
+      const layer = name.querySelector('.hero-slices')
+      const slices = name.querySelectorAll('.hero-slice')
+      let glitch = null
+
+      const enter = () => {
+        // Wait for the entrance to finish, and never stack two glitches.
+        if (gsap.getProperty(base, 'opacity') < 1 || glitch?.isActive()) return
+        glitch = gsap.timeline({ defaults: { ease: 'power2.out' } })
+          .set(base, { autoAlpha: 0 })
+          .set(layer, { autoAlpha: 1 })
+          .to(slices, {
+            x: index => (index % 2 === 0 ? -1 : 1) * gsap.utils.random(6, 18),
+            duration: 0.12,
+            stagger: 0.02
+          })
+          .to(slices, { x: 0, duration: 0.5, ease: 'elastic.out(1, 0.55)', stagger: 0.02 })
+          .set(base, { autoAlpha: 1 })
+          .set(layer, { autoAlpha: 0 })
+      }
+
+      name.addEventListener('pointerenter', enter)
+      return () => name.removeEventListener('pointerenter', enter)
     }, root)
 
     // Reverts transforms and removes triggers on unmount, Strict Mode replay,
