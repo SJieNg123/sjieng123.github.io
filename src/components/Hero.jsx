@@ -33,8 +33,8 @@ const Hero = () => (
         {' '}With a bachelor’s degree in Computer Science, I research privacy-preserving machine learning and database performance optimization.
       </p>
       <div className="hero-actions">
-        <a className="button button-dark" href="#work">Explore my work <ArrowDown size={18} aria-hidden="true" /></a>
-        <a className="text-link" href="#contact">Get in touch <ArrowUpRight size={18} aria-hidden="true" /></a>
+        <a className="button button-dark" href="#work">Explore my work</a>
+        <a className="text-link" href="#contact">Get in touch <ArrowDown size={18} aria-hidden="true" /></a>
       </div>
     </div>
     <div className="hero-art">
