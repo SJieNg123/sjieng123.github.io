@@ -126,8 +126,8 @@ body { background: var(--paper); color: var(--ink); }
 .experience-company h3 { font-size: clamp(23px, 2.5vw, 32px); line-height: 1.15; font-weight: 700; letter-spacing: -1px; margin: 22px 0 16px; }
 .company-description { max-width: 300px; color: var(--muted-ink); font-size: 14px; line-height: 1.7; }
 .experience-mark { display: flex; align-items: flex-end; margin-top: 30px; }
-.experience-mark span { width: 44px; height: 44px; background: var(--yellow); }
-.experience-mark span:last-child { background: var(--ink); border-radius: 50%; margin-left: -10px; }
+.experience-mark span { width: 100px; height: 100px; background: var(--yellow); }
+.experience-mark span:last-child { background: var(--ink); border-radius: 50%; margin-left: -22px; }
 .experience-projects { border-top: 2px solid var(--ink); }
 .experience-project { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
 .experience-index { font-size: 12px; font-weight: 700; padding-top: 5px; }
@@ -217,7 +217,8 @@ body { background: var(--paper); color: var(--ink); }
   .experience-company { position: relative; }
   .experience-company h3 { margin-top: 18px; }
   .experience-mark { margin-top: 20px; }
-  .experience-mark span { width: 28px; height: 28px; }
+  .experience-mark span { width: 50px; height: 50px; }
+  .experience-mark span:last-child { margin-left: -11px; }
   .experience-project { grid-template-columns: 24px minmax(0, 1fr); gap: 12px; }
   .experience-project-content ul { flex-direction: column; gap: 8px; }
   .research-section { grid-template-columns: 1fr; gap: 30px; }
