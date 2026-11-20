@@ -32,7 +32,7 @@ const NTHUMods = () => (
     <article className="project-layout">
       <div className="project-poster project-poster--ocean" aria-label="NTHU Climate Atlas, ocean natural capital map">
         <div className="poster-top"><span>FEATURED PROJECT</span><span>02 / NTHU</span></div>
-        <div className="poster-type">NTHU<br /><span>Atlas</span><span className="poster-period">.</span></div>
+        <div className="poster-type">NTHU<br />Climate<br /><span>Atlas</span><span className="poster-period">.</span></div>
         <div className="poster-shapes" aria-hidden="true"><span /><span /><span /></div>
         <div className="poster-bottom"><span>OCEANS. MAPPED.</span><ArrowUpRight size={24} aria-hidden="true" /></div>
       </div>

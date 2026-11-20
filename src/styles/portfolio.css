@@ -97,7 +97,7 @@ body { background: var(--paper); color: var(--ink); }
 .work-section .section-heading h2 { font-size: clamp(32px, 3vw, 44px); }
 .project-layout { display: grid; grid-template-columns: minmax(276px, 0.7475fr) minmax(0, 1.2525fr); gap: 5%; align-items: center; }
 .project-poster { --poster-scale: 1.15; background: rgb(124, 92, 191); color: var(--paper); min-width: 0; min-height: calc(300px * var(--poster-scale)); padding: calc(20px * var(--poster-scale)); display: flex; flex-direction: column; position: relative; overflow: hidden; }
-.project-layout + .project-layout { margin-top: 56px; }
+.project-layout + .project-layout { margin-top: 56px; padding-top: 56px; border-top: 1px solid var(--rule); }
 .project-poster--ocean { background: var(--blue); }
 .project-poster--ocean .poster-type > span:not(.poster-period) { color: var(--yellow); }
 .project-poster--ocean .poster-period { color: var(--paper); }
@@ -212,7 +212,7 @@ body { background: var(--paper); color: var(--ink); }
   .section-heading h2, .research-intro h2 { font-size: 42px; }
   .work-section.section-shell { padding-top: 36px; padding-bottom: 36px; }
   .project-layout { grid-template-columns: 1fr; gap: 24px; }
-  .project-layout + .project-layout { margin-top: 40px; }
+  .project-layout + .project-layout { margin-top: 40px; padding-top: 40px; }
   .project-poster { min-height: calc(240px * var(--poster-scale)); padding: calc(18px * var(--poster-scale)); }
   .poster-type { font-size: calc(56px * var(--poster-scale)); margin-top: calc(16px * var(--poster-scale)); }
   .poster-shapes { width: calc(96px * var(--poster-scale)); padding-top: calc(12px * var(--poster-scale)); padding-bottom: calc(10px * var(--poster-scale)); }
