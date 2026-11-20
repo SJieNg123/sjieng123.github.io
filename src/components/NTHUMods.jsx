@@ -29,6 +29,22 @@ const NTHUMods = () => (
         </div>
       </div>
     </article>
+    <article className="project-layout">
+      <div className="project-poster project-poster--ocean" aria-label="NTHU Climate Atlas, ocean natural capital map">
+        <div className="poster-top"><span>FEATURED PROJECT</span><span>02 / NTHU</span></div>
+        <div className="poster-type">NTHU<br /><span>Atlas</span><span className="poster-period">.</span></div>
+        <div className="poster-shapes" aria-hidden="true"><span /><span /><span /></div>
+        <div className="poster-bottom"><span>OCEANS. MAPPED.</span><ArrowUpRight size={24} aria-hidden="true" /></div>
+      </div>
+      <div className="project-copy">
+        <p className="eyebrow">Data platform / Sustainability</p><h3>NTHU Climate Atlas</h3>
+        <p>A natural capital database for Taiwan's ocean, built for the NTHU College of Sustainability. It maps 19 marine natural capital layers and scores any coordinate by averaging the grid within a 500 m radius, with a reviewed request flow for downloading the source data.</p>
+        <ul className="tech-tags" aria-label="Project technologies"><li>React</li><li>MapLibre</li><li>FastAPI</li><li>Supabase</li></ul>
+        <div className="project-links">
+          <a className="text-link" href="https://nthu-climate-atlas.vercel.app/" target="_blank" rel="noopener noreferrer">Visit us <ArrowUpRight size={19} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>
+        </div>
+      </div>
+    </article>
   </section>
 )
 
