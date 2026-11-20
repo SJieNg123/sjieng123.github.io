@@ -159,7 +159,39 @@ export function usePortfolioMotion(rootRef) {
       reveal('.research-intro', '.eyebrow, h2, p:not(.eyebrow)')
       reveal('.research-list > li', ':scope > *')
       select('.research-mark').forEach(element => {
+        // Every few seconds the two circles trade places like shuffled cards:
+        // one arcs over the top, the other dips under, and they swap layers halfway.
+        const [left, right] = element.querySelectorAll('span')
+        const gap = right.offsetLeft - left.offsetLeft
+        const interval = 3
+        const shuffle = gsap.timeline({ paused: true, repeat: -1 })
+        const swapTo = (swapped, at) => {
+          shuffle.to(left, { x: swapped ? gap : 0, duration: 0.8, ease: 'power3.inOut' }, at)
+            .to(right, { x: swapped ? -gap : 0, duration: 0.8, ease: 'power3.inOut' }, at)
+            .to(swapped ? left : right, { keyframes: { y: [0, -12, 0] }, duration: 0.8, ease: 'sine.inOut' }, at)
+            .to(swapped ? right : left, { keyframes: { y: [0, 8, 0] }, duration: 0.8, ease: 'sine.inOut' }, at)
+            .set(left, { zIndex: swapped ? 2 : 0 }, at + 0.4)
+            .set(right, { zIndex: swapped ? 0 : 2 }, at + 0.4)
+        }
+        swapTo(true, interval - 0.8)
+        swapTo(false, interval * 2 - 0.8)
+
+        // Start after the entrance, and only run while the circles are on screen.
+        let started = false
+        ScrollTrigger.create({
+          trigger: element,
+          start: 'top bottom',
+          end: 'bottom top',
+          onToggle: self => {
+            if (started) self.isActive ? shuffle.resume() : shuffle.pause()
+          }
+        })
+
         entrance(element, (timeline, children) => {
+          timeline.eventCallback('onComplete', () => {
+            started = true
+            shuffle.play()
+          })
           timeline.from(children('span'), {
             x: index => index === 0 ? -12 : 12,
             opacity: 0,
