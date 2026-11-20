@@ -2,8 +2,8 @@ import React from 'react'
 
 const groups = [
   { title: 'Languages', number: '01', tools: ['C / C++', 'Python', 'JavaScript', 'TypeScript'] },
-  { title: 'Web & cloud', number: '02', tools: ['React', 'Node.js', 'PostgreSQL', 'Vercel', 'AWS'] },
-  { title: 'Systems & tools', number: '03', tools: ['Docker', 'Git', 'Linux', 'VirtualBox', 'VMware'] }
+  { title: 'Web & cloud', number: '02', tools: ['React', 'Node.js', 'Vercel', 'AWS'] },
+  { title: 'Systems & tools', number: '03', tools: ['Docker', 'Git', 'Linux', 'PostgreSQL', 'VirtualBox', 'VMware'] }
 ]
 
 const TechMarquee = () => (
