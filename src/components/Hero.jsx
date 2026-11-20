@@ -30,7 +30,7 @@ const Hero = () => (
       <p className="hero-description">
         I’m a master’s student at NTHU’s Institute of Information Security, advised by Te-Chuan Chiu at{' '}
         <a className="inline-link" href="https://theochiu.wixsite.com/nthucs/acelab" target="_blank" rel="noopener noreferrer">ACE Lab <ArrowUpRight size={14} aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></a>.
-        {' '}With a bachelor’s degree in Computer Science, I research privacy-preserving machine learning and database performance optimization.
+        {' '}With a bachelor’s degree in Computer Science, I research privacy-preserving machine learning, database performance optimization and 5G core network privacy.
       </p>
       <div className="hero-actions">
         <a className="button button-dark" href="#work">Explore my work</a>
