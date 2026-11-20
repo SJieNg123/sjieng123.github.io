@@ -2,8 +2,8 @@ import React from 'react'
 
 const research = [
   ['01', 'Privacy-preserving machine learning', 'Developing privacy-preserving machine learning (PPML) using secret sharing and secure multi-party computation (MPC).', 'Secret sharing / MPC'],
-  ['02', 'SQLite cold-start optimization', 'Investigating SQLite cold-start behavior and optimizing the latency of the first query. Hopefully can be published in a paper soon!', 'Database performance / EA&B'],
-  ['03', 'Oblivious UDR', 'Designing a dual-backend architecture that protects the privacy of UDR queries in the 5G core, implemented on Open5GS. Hopefully can be published in a paper soon!', '5G core / Access privacy']
+  ['02', 'SQLite cold-start optimization', 'Investigating SQLite cold-start behavior and optimizing the latency of the first query. Hopefully it will be published as a paper soon!', 'Database performance / EA&B'],
+  ['03', 'Oblivious UDR', 'Designing a dual-backend architecture that protects the privacy of UDR queries in the 5G core, implemented on Open5GS. Hopefully it will be published as a paper soon!', '5G core / Access privacy']
 ]
 
 const ResearchConstellation = () => (
