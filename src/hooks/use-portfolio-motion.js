@@ -69,7 +69,44 @@ export function usePortfolioMotion(rootRef) {
         })
       })
       select('.hero-art').forEach(element => {
+        // Every second, each shape moves one quadrant clockwise and turns 90°.
+        // Quadrant centres in SVG units, clockwise from top left.
+        const centres = [[130, 130], [390, 130], [390, 390], [130, 390]]
+        const slots = Array.from(element.querySelectorAll('.geometry-slot'))
+        const startSlot = slots.map(slot => Number(slot.dataset.slot))
+        const offset = (index, step, axis) =>
+          centres[(startSlot[index] + step) % 4][axis] - centres[startSlot[index]][axis]
+
+        const swap = gsap.timeline({ paused: true, repeat: -1 })
+        for (let step = 1; step <= 4; step++) {
+          swap.to(slots, {
+            x: index => offset(index, step, 0),
+            y: index => offset(index, step, 1),
+            rotation: step * 90,
+            transformOrigin: '50% 50%',
+            duration: 0.7,
+            ease: 'power3.inOut'
+          }, step - 0.7)
+        }
+        // A full turn ends where it started, so the repeat is seamless.
+        swap.set(slots, { rotation: 0 }, 4)
+
+        // Start after the entrance, and only run while the art is on screen.
+        let started = false
+        ScrollTrigger.create({
+          trigger: element,
+          start: 'top bottom',
+          end: 'bottom top',
+          onToggle: self => {
+            if (started) self.isActive ? swap.resume() : swap.pause()
+          }
+        })
+
         entrance(element, (timeline, children) => {
+          timeline.eventCallback('onComplete', () => {
+            started = true
+            swap.play()
+          })
           const grid = children('.art-grid')[0]
           const length = grid.getTotalLength()
           timeline.from(children('.art-caption'), { opacity: 0, y: 10, duration: 0.4 })
