@@ -34,7 +34,6 @@ const Hero = () => (
       </p>
       <div className="hero-actions">
         <a className="button button-dark" href="#work">Explore my work</a>
-        <a className="text-link" href="#contact">Get in touch <ArrowDown size={18} aria-hidden="true" /></a>
       </div>
     </div>
     <div className="hero-art">

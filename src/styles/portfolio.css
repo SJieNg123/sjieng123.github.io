@@ -200,7 +200,10 @@ body { background: var(--paper); color: var(--ink); }
 @media (max-width: 720px) {
   .site-header { flex-wrap: wrap; padding: 22px 0 12px; gap: 14px; }
   .site-nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+  /* The contact button sits beside the wordmark so the four section links fit on one row. */
+  .site-header { position: relative; }
   .site-nav .nav-contact { padding: 0 10px; }
+  .portfolio .site-nav a[href].nav-contact { position: absolute; top: 14px; right: 0; }
   .hero-section { padding-top: 36px; grid-template-columns: 1fr; }
   .hero-copy h1 { font-size: calc(clamp(86px, 20vw, 130px) - 10px); }
   .hero-statement { font-size: 26px; }

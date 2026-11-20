@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { ArrowUpRight, ArrowUp } from 'lucide-react'
+import { ArrowDown, ArrowUp } from 'lucide-react'
 import Hero from '../components/Hero'
 import NTHUMods from '../components/NTHUMods'
 import WorkExperience from '../components/WorkExperience'
@@ -20,7 +20,7 @@ const Home = () => {
         <div className="wordmark"><span className="brand-symbol" aria-hidden="true" /><span>SHI JIE NG<span className="wordmark-dot">.</span></span></div>
         <nav className="site-nav" aria-label="Main navigation">
           <a href="#work">Projects</a><a href="#experience">Work Experience</a><a href="#research">Research</a><a href="#toolkit">Toolkit</a>
-          <a className="nav-contact" href="#contact">Let's talk <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <a className="nav-contact" href="#contact">Get in touch <ArrowDown size={16} aria-hidden="true" /></a>
         </nav>
       </header>
       <main id="main" tabIndex={-1}><Hero /><NTHUMods /><WorkExperience /><ResearchConstellation /><TechMarquee /><Contact /></main>
