@@ -38,7 +38,7 @@ const Hero = () => (
       </div>
     </div>
     <div className="hero-art">
-      <div className="art-caption"><span>FORM / FUNCTION</span><span>01 — 03</span></div>
+      <div className="art-caption"><span>FORM / FUNCTION</span><span>01 — 04</span></div>
       <svg className="geometry-composition" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
         <path d="M260 0v520M0 260h520" className="art-grid" />
         <circle className="geometry-shape" cx="130" cy="130" r="116" fill="var(--red)" />
@@ -49,7 +49,7 @@ const Hero = () => (
           <circle cx="390" cy="390" r="50" fill="var(--paper)" />
         </g>
       </svg>
-      <div className="art-legend" aria-hidden="true"><span><i className="legend-shape circle" /> Build</span><span><i className="legend-shape square" /> Research</span><span><i className="legend-shape triangle" /> Explore</span></div>
+      <div className="art-legend" aria-hidden="true"><span><i className="legend-shape circle" /> Build</span><span><i className="legend-shape square" /> Research</span><span><i className="legend-shape triangle" /> Work</span><span><i className="legend-shape quarter" /> Explore</span></div>
     </div>
     <div className="hero-footnote"><span>Engineering with intention.</span><span>Scroll to explore <ArrowDown size={14} aria-hidden="true" /></span></div>
   </section>

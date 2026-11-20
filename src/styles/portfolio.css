@@ -82,6 +82,7 @@ body { background: var(--paper); color: var(--ink); }
 .legend-shape.circle { background: var(--red); border-radius: 50%; }
 .legend-shape.square { background: var(--blue); }
 .legend-shape.triangle { background: var(--yellow); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.legend-shape.quarter { background: var(--ink); border-top-right-radius: 100%; }
 .hero-footnote { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 60px; padding: 20px 0; border-top: 1px solid var(--ink); font-size: 12px; color: var(--muted-ink); }
 .hero-footnote span:last-child { display: inline-flex; align-items: center; gap: 10px; }
 .section-shell { padding: 85px 5%; border-top: 2px solid var(--ink); }
