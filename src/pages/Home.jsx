@@ -25,7 +25,6 @@ const Home = () => {
       </header>
       <main id="main" tabIndex={-1}><Hero /><NTHUMods /><WorkExperience /><ResearchConstellation /><TechMarquee /><Contact /></main>
       <footer className="site-footer">
-        <span className="footer-name">Shi Jie Ng.</span>
         <p>Built with purpose. Always exploring.</p>
         <div className="footer-end"><span>© {new Date().getFullYear()} Shi Jie Ng</span><a href="#top" className="back-top">Back to top <ArrowUp size={16} aria-hidden="true" /></a></div>
       </footer>
