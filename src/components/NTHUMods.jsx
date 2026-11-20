@@ -9,7 +9,7 @@ const NTHUMods = () => (
         <div className="poster-top"><span>FEATURED PROJECT</span><span>01 / NTHU</span></div>
         <div className="poster-type">NTHU<br /><span>Mods</span><span className="poster-period">.</span></div>
         <div className="poster-shapes" aria-hidden="true"><span /><span /><span /></div>
-        <div className="poster-bottom"><span>COURSES. PLANNED.</span><ArrowUpRight size={24} aria-hidden="true" /></div>
+        <div className="poster-bottom"><span>COURSES. PLANNED.</span></div>
       </div>
       <div className="project-copy">
         <p className="eyebrow">Web application / Education</p><h3>NTHUMods</h3>
@@ -34,7 +34,7 @@ const NTHUMods = () => (
         <div className="poster-top"><span>FEATURED PROJECT</span><span>02 / NTHU</span></div>
         <div className="poster-type">NTHU<br />Climate<br /><span>Atlas</span><span className="poster-period">.</span></div>
         <div className="poster-shapes" aria-hidden="true"><span /><span /><span /></div>
-        <div className="poster-bottom"><span>OCEANS. MAPPED.</span><ArrowUpRight size={24} aria-hidden="true" /></div>
+        <div className="poster-bottom"><span>OCEANS. MAPPED.</span></div>
       </div>
       <div className="project-copy">
         <p className="eyebrow">Data platform / Sustainability</p><h3>NTHU Climate Atlas</h3>
